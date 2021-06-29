@@ -1,17 +1,17 @@
 name: Count Lines of Code
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
-# events but only for the main branch
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  cloc:
+  tokei:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -20,12 +20,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs djdefi/cloc-action@master
-    - name: Count Lines of Code (cloc)
-      uses: djdefi/cloc-action@main
-    
-    #- name: Upload cloc output as a build artifact
-    #  uses: actions/upload-artifact@v2
-    #  with:
-    #    name: cloc
-    #    path: cloc.txt
+    # Runs hypfer/cloc-action@master
+    - name: Count Lines of Code (tokei)
+      uses: hypfer/tokei-action@master
+
+    - name: Upload tokei output as a build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: loc.txt
+        path: loc.txt

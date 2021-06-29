@@ -1,11 +1,11 @@
 # action.yml
-name: 'Count Lines of Code (cloc)'
-description: 'Count Lines of Code with https://github.com/AlDanial/cloc'
+name: 'Count Lines of Code (tokei)'
+description: 'Count Lines of Code with https://github.com/XAMPPRocky/tokei'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
- 
+
 branding:
-  icon: 'code'  
+  icon: 'code'
   color: 'blue'
